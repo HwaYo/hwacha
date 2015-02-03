@@ -1,6 +1,4 @@
 $(document).on('ready page:load', function(){
-
-  $(function(){
   // See if this is a touch device
   if ('ontouchstart' in window)
   {
