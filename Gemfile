@@ -53,3 +53,5 @@ end
 
 gem 'kaminari', '~> 0.16.2'
 gem 'randumb', '~> 0.5.0'
+gem 'devise', '~> 3.4.1'
+gem 'omniauth-facebook', '~> 2.0.0'
