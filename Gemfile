@@ -54,3 +54,4 @@ end
 gem 'autoprefixer-rails', '~> 5.1.1'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'kaminari', '~> 0.16.2'
+gem 'randumb', '~> 0.5.0'
