@@ -23,19 +23,23 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="user-profile">
-            <%= image_tag "me.jpg", size: "40x40" %> <a>김민혁</a>
-          </li>
-          <li><a href="#">Logout</a></li>
+          <% if current_user %>
+            <li class="user-profile">
+              <%= image_tag current_user.image, size: "40x40" %>
+              <a><%= current_user.name %></a>
+            </li>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign in", user_omniauth_authorize_path(:facebook) %>
+            </li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
   <%= yield %>
-
-
-  
-
 </body>
 </html>
