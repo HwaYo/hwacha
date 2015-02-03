@@ -12,12 +12,18 @@
     <nav class="navigation-bar dark">
         <nav class="navigation-bar-content">
             <item class="element">Hwacha Beta</item>
-            <a class="element place-right" href="#">Log out</a>
+          <% if current_user %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'element place-right' %>
+          <% else %>
+            <%= link_to "Sign in", user_omniauth_authorize_path(:facebook), class: 'element place-right' %>
+          <% end %>
             <span class="element-divider place-right"></span>
+          <% if current_user %>
             <button class="element image-button image-left place-right">
-                김민혁
-                <%= image_tag "me.jpg" %>
+                <%= current_user.name %>
+                <%= image_tag current_user.image %>
             </button>
+          <% end %>
         </nav>
     </nav>
     <%= yield %>
