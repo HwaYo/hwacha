@@ -52,3 +52,4 @@ group :production do
 end
 
 gem 'kaminari', '~> 0.16.2'
+gem 'randumb', '~> 0.5.0'
